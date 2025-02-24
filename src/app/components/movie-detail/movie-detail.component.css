@@ -1,0 +1,92 @@
+/* Main container to center content */
+.container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Creates a flexible grid */
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: #f4f4f4;
+    padding: 20px;
+}
+/* styling for movie details */
+.details{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Creates a flexible grid */
+    flex-direction: column;
+    max-width: 100%;
+    height:10%;
+    text-align: center;
+    width: 100%;
+}
+
+.movie-image {
+    width: 100%;
+    height: 250px;
+    border-radius: 10px;
+  }
+
+/* Movie title styling */
+.details-card h2 {
+    font-size: 24px;
+    color: #1976d2;
+    margin-bottom: 10px;
+}
+
+/* Genre styling */
+.details-card p {
+    font-size: 18px;
+    color: #444;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+/* Showtime buttons container */
+.details-card h4 {
+    margin: 10px 0;
+}
+
+/* Showtime button styling */
+.details-card button {
+    font-size: 16px;
+    color: white;
+    background-color: #1976d2;
+    border: none;
+    border-radius: 8px;
+    padding: 8px 15px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+    margin: 5px;
+}
+
+/* Hover effect for showtime buttons */
+.details-card button:hover {
+    background-color: #115293;
+}
+
+/* Back button styling */
+.container a {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 15px;
+    background-color: #1976d2;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease-in-out;
+}
+
+/* Hover effect for back button */
+.container a:hover {
+    background-color: #115293;
+}
+
+/* Responsive design */
+@media (max-width: 600px) {
+    .details-card {
+        width: 90%;
+        height: 10%;
+        padding: 20px;
+    }
+}

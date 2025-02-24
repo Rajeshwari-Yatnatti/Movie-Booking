@@ -1,0 +1,14 @@
+<div class="container" *ngIf="movie">
+    <img [src]="movie.image" alt="movie.title" class="movie-image">
+    <div class="details">
+    <h2>{{movie.title}}</h2>
+    <p>{{movie.genre}}</p>
+
+    <h4 *ngFor="let time of movie.showtimes">
+       <button>{{time}}</button>
+    </h4>
+    <a [routerLink]="['/movie', movie.id, 'seat-selection']">Select Seat</a>
+    </div>
+</div>
+<a routerLink="/">Back to Movie List</a>
+

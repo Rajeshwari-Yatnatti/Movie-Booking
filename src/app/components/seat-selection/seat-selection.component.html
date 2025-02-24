@@ -1,0 +1,16 @@
+<div class="seat-container">
+    <div class="screen">SCREEN</div>
+
+    <div class="seats">
+        <div *ngFor="let seat of seats"
+            class="seat"
+            [ngClass]="{'selected':seat.selected, 'occupied':seat.occupied}"
+            (click)="selectSeat(seat)">
+            {{seat.row}} {{seat.number}}
+        </div>
+    </div>
+
+    <button (click)="confirmBooking()" [disabled]="selectedSeats.length ===0">
+        CONFIRM BOOKING
+    </button>
+</div>

@@ -1,0 +1,59 @@
+.seat-container {
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  .screen {
+    background: black;
+    color: white;
+    padding: 10px;
+    margin-bottom: 20px;
+    font-weight: bold;
+  }
+  
+  .seats {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    gap: 10px;
+    justify-content: center;
+    padding: 10px;
+  }
+  
+  .seat {
+    width: 40px;
+    height: 40px;
+    background: lightgray;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+  }
+  
+  .seat.selected {
+    background: green;
+    color: white;
+  }
+  
+  .seat.occupied {
+    background: red;
+    cursor: not-allowed;
+  }
+  
+  button {
+    margin-top: 20px;
+    padding: 10px 15px;
+    font-size: 16px;
+    background-color: #1976d2;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  button:disabled {
+    background-color: gray;
+    cursor: not-allowed;
+  }
+  
