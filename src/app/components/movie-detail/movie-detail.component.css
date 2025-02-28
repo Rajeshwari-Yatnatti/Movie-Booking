@@ -1,0 +1,116 @@
+/* Main container to center content */
+.container {
+    display: grid;
+    grid-template-columns: 4fr 3fr 3fr; /* Adjust the ratio to give 40% to the image and 30% to details */
+    gap: 20px; /* Adds space between the image and details */
+    align-items: start; /* Aligns items to the start of the container */
+    justify-content: center;
+    min-height: 100vh;
+    background-color: #f4f4f4;
+    padding: 20px;
+}
+
+/* Movie image styling */
+.movie-image {
+    width: 100%; /* Full width of its container */
+    height: auto; /* Height adjusts according to width */
+    max-height: 250px; /* Set a max-height for the image */
+    object-fit: cover; /* Ensures aspect ratio is maintained */
+    border-radius: 10px;
+}
+
+/* Styling for movie details */
+.details {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    text-align: left; /* Align text to the left for better readability */
+    gap: 10px; /* Space between elements */
+    max-width: 100%; /* Ensure it doesn’t stretch beyond available space */
+}
+
+/* Movie title styling */
+.details h2 {
+    font-size: 24px;
+    color: #1976d2;
+    margin-bottom: 10px;
+}
+
+/* Genre styling */
+.details p {
+    font-size: 18px;
+    color: #444;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+/* Showtime buttons container */
+.details h4 {
+    margin: 10px 0;
+}
+
+/* Showtime button styling */
+.details button {
+    font-size: 16px;
+    color: white;
+    background-color: #1976d2;
+    border: none;
+    border-radius: 8px;
+    padding: 8px 15px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+    margin: 5px;
+}
+
+/* Hover effect for showtime buttons */
+.details button:hover {
+    background-color: #115293;
+}
+
+/* Back button styling */
+a {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 15px;
+    background-color: #1976d2;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    align-items: center;
+    transition: background-color 0.3s ease-in-out;
+}
+
+/* Hover effect for back button */
+.container a:hover {
+    background-color: #115293;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .container {
+        grid-template-columns: 1fr; /* Stack image and details vertically on smaller screens */
+    }
+
+    .movie-image {
+        width: 100%; /* Make the image fully responsive */
+        height: auto; /* Adjust height automatically based on the width */
+        max-height: 250px; /* Limit image height on smaller screens */
+    }
+
+    .details {
+        width: 100%; /* Ensure the details section doesn’t stretch too wide */
+        text-align: center; /* Center text on smaller screens */
+    }
+}
+
+@media (max-width: 600px) {
+    .movie-image {
+        max-height: 200px; /* Reduce image height on very small screens */
+    }
+
+    .details {
+        width: 90%; /* Make the details section more compact */
+        text-align: center; /* Center text on small screens */
+    }
+}

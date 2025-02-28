@@ -1,0 +1,28 @@
+<div class="seat-container">
+    <div class="screen">SCREEN</div>
+    <!-- Second class setas -->
+     <p>{{secondClassPrice}} SECOND CLASS</p>
+    <div class="seats second-class">
+        <div *ngFor="let seat of secondClassSeats"
+            class="seat"
+            [ngClass]="{'selected':seat.selected, 'occupied':seat.occupied, 'second-class': seat.type === 'secondClass'}"
+            (click)="selectSeat(seat)">
+            {{seat.row}} {{seat.number}}
+        </div>
+    </div>
+
+    <!-- Balcony Seats -->
+    <p>{{balconyPrice}} BALCONY</p>
+
+    <div class="seats balcony">
+        <div *ngFor="let seat of balconySeats"
+            class="seat"
+            [ngClass]="{'selected':seat.selected, 'occupied':seat.occupied, 'balcony': seat.type === 'balcony'}"
+            (click)="selectSeat(seat)">
+            {{seat.row}} {{seat.number}}
+        </div>
+    </div>
+
+    <button [routerLink]="['/movie', movieId, 'seats', 'booking']" (click)="pay()">PAY ${{totalAmount | number: '1.2-2'}}</button>
+       
+</div>

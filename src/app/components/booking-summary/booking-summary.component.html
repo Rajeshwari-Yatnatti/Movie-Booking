@@ -1,0 +1,13 @@
+<div class="container">
+    <div class="banner">
+        <img [src]="/assets/images/booking-summary.jpg" alt="banner">
+    </div>
+    <div class="bookinSummary">
+        <h3>BOOKING SUMMARY</h3>
+        <p>{{movieTitle}}</p>
+        <p>${{totalAmount}}</p>
+        <div *ngFor="let seat of selectedSeats">{{seat}}</div>
+
+
+    </div>
+</div>
