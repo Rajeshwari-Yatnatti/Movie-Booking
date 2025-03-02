@@ -1,0 +1,152 @@
+/* Main container to center content */
+.container {
+    display: flex;
+    flex-direction: column; /* Stack children vertically */
+    align-items: center; /* Center content horizontally */
+    padding: 20px;
+    background-color: #f4f4f4;
+    min-height: 100vh;
+}
+
+/* Wrapper for movie image and details */
+.content-wrapper {
+    display: flex;
+    justify-content: space-between; /* Space between image and details */
+    width: 100%;
+    max-width: 1200px; /* Limit the width of the content */
+    margin-bottom: 20px; /* Add spacing between content and button */
+}
+
+/* Movie image styling */
+.movie-image {
+    flex: 1; /* Take up 50% of the width */
+    max-width: 500px; /* Limit the image width */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 10px;
+    margin-right: 20px; /* Add spacing between image and details */
+}
+
+/* Styling for movie details */
+.details {
+    height: 50%;
+    flex: 1; /* Take up 50% of the width */
+    max-width: 600px; /* Limit the width of the details section */
+    padding: 15px; /* Reduced padding */
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+}
+
+/* Movie title styling */
+.details h2 {
+    font-size: 22px; /* Slightly smaller font size */
+    color: #1976d2;
+    margin-bottom: 8px; /* Reduced margin */
+}
+
+/* Genre styling */
+.details p {
+    font-size: 16px; /* Slightly smaller font size */
+    color: #444;
+    font-weight: bold;
+    margin-bottom: 10px; /* Reduced margin */
+}
+
+/* Star rating styling */
+.star-rating {
+    display: flex;
+    margin-bottom: 10px; /* Reduced margin */
+}
+
+.star {
+    font-size: 18px; /* Slightly smaller star size */
+    margin-right: 5px;
+}
+
+.full::before {
+    content: '★'; /* Full star */
+    color: gold;
+}
+
+.half::before {
+    content: '☆'; /* Half star */
+    color: gold;
+}
+
+.empty::before {
+    content: '☆'; /* Empty star */
+    color: lightgray;
+}
+
+/* Select Seat button styling */
+.details a {
+    display: inline-block;
+    margin-top: 10px; /* Reduced margin */
+    padding: 8px 12px; /* Smaller padding */
+    background-color: #1976d2;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease-in-out;
+    font-size: 14px; /* Smaller font size */
+}
+
+/* Hover effect for Select Seat button */
+.details a:hover {
+    background-color: #115293;
+}
+
+/* Back button styling */
+.back-button {
+    display: block; /* Make it a block-level element */
+    margin-top: 20px; /* Add spacing above the button */
+    padding: 10px 20px;
+    background-color: #1976d2;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    text-align: center;
+    transition: background-color 0.3s ease-in-out;
+}
+
+/* Hover effect for Back button */
+.back-button:hover {
+    background-color: #115293;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .content-wrapper {
+        flex-direction: column; /* Stack image and details vertically */
+        align-items: center; /* Center items horizontally */
+    }
+
+    .movie-image {
+        margin-right: 0; /* Remove margin for stacked layout */
+        margin-bottom: 20px; /* Add spacing between image and details */
+    }
+
+    .details {
+        max-width: 100%; /* Allow details to take full width */
+    }
+}
+
+@media (max-width: 480px) {
+    .details h2 {
+        font-size: 20px; /* Adjust heading size for smaller screens */
+    }
+
+    .details p {
+        font-size: 16px; /* Adjust paragraph size for smaller screens */
+    }
+
+    .star {
+        font-size: 18px; /* Adjust star size for smaller screens */
+    }
+
+    .details a {
+        font-size: 14px; /* Adjust button text size for smaller screens */
+    }
+}

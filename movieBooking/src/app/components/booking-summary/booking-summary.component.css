@@ -1,0 +1,128 @@
+/* Container to hold both the image and bookingg summary */
+.container {
+    display: flex;
+    justify-content: space-between; /* Ensures space between left and right */
+    height: 100vh; /* Make it full height of the viewport */
+    flex-wrap: wrap; /* Allow the layout to wrap on smaller screens */
+  }
+  
+  /* Banner (Image) styling */
+  .banner {
+    flex: 1; /* This makes the banner take 50% of the width */
+    display: flex;
+    justify-content: center; /* Center the image horizontally */
+    align-items: center; /* Center the image vertically */
+    padding: 20px; /* Optional: Add some padding */
+  }
+  
+  .banner img {
+    width: 100%; /* Make the image take up full width of its container */
+    height: auto; /* Maintain the aspect ratio */
+    max-width: 500px; /* Optional: you can set a max-width if you don't want the image to stretch too much */
+  }
+  
+  /* bookingg Summary styling */
+  /* Booking Summary container */
+.bookingSummary {
+    padding: 20px;
+    font-family: Arial, sans-serif;
+}
+
+/* Details container */
+.details {
+    margin-top: 20px;
+}
+
+/* Styling for each seat and total details */
+.seat-detail {
+    display: flex;
+    justify-content: space-between; /* Ensures space between seat name and amount */
+    padding: 10px 0;
+    font-size: 18px;
+    border-bottom: 1px solid #ddd; /* Optional: Add a small line under each seat item */
+}
+
+/* Seat name column */
+.seat-name {
+    width: 60%; /* Adjust as necessary */
+    text-align: left;
+}
+
+/* Seat amount column */
+.seat-amount {
+    width: 40%; /* Adjust as necessary */
+    text-align: right; /* Ensures the amount is aligned to the right */
+    font-weight: bold;
+}
+
+/* Convenience fees and subtotal formatting */
+.fees, .subtotal {
+    display: flex;
+    justify-content: space-between;
+    font-size: 20px;
+    padding: 10px 0;
+}
+
+hr {
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 15px 0;
+}
+
+/* Optional: Add some spacing at the bottom */
+.details p:last-child {
+    margin-bottom: 0;
+}
+
+  
+  /* Optional: Styling for the text */
+  .bookingSummary h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: red;
+  }
+  
+  .bookingSummary p {
+    font-size: 18px;
+    margin: 10px 0;
+  }
+  
+  .bookingSummary div {
+    margin: 5px 0;
+  }
+  
+  /* Responsive design for smaller screens (e.g., tablets, mobile phones) */
+  @media (max-width: 768px) {
+    .container {
+      flex-direction: column; /* Stack elements vertically */
+      height: auto; /* Remove the full viewport height */
+    }
+  
+    .banner, .bookingSummary {
+      flex: none; /* Both sections will take full width */
+      width: 100%; /* Ensure both sections take up the full width */
+    }
+  
+    .banner img {
+      max-width: 100%; /* Ensure the image is responsive */
+    }
+  
+    .bookingSummary h3 {
+      font-size: 20px; /* Adjust the heading size for smaller screens */
+    }
+  
+    .bookingSummary p {
+      font-size: 16px; /* Adjust the paragraph size for smaller screens */
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .bookingSummary h3 {
+      font-size: 18px; /* Further adjust the heading size for very small screens */
+    }
+  
+    .bookingSummary p {
+      font-size: 14px; /* Further adjust the paragraph size for very small screens */
+    }
+  }
+  

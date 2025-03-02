@@ -1,0 +1,43 @@
+<div class="container">
+  <div class="banner">
+    <img src="assets/images/movieBooking.jpg" alt="banner" />
+  </div>
+  <div class="bookingSummary">
+    <h3>BOOKING SUMMARY - {{ movieTitle }}</h3>
+    <div class="details">
+      <!-- Second-Class Seats -->
+      <div *ngIf="groupedSeats['Second-Class'].length > 0">
+        <p class="seat-detail">
+          <span class="seat-name">
+            Second Class - {{ groupedSeats['Second-Class'].join(', ') }}
+          </span>
+          <span class="seat-amount">${{ secondClassTotal }}</span>
+        </p>
+      </div>
+
+      <!-- Balcony Seats -->
+      <div *ngIf="groupedSeats['Balcony'].length > 0">
+        <p class="seat-detail">
+          <span class="seat-name">
+            Balcony - {{ groupedSeats['Balcony'].join(', ') }}
+          </span>
+          <span class="seat-amount">${{ balconyTotal }}</span>
+        </p>
+      </div>
+
+      <!-- Convenience Fees -->
+      <p class="fees">
+        <span class="seat-name">Convenience fees</span>
+        <span class="seat-amount">${{ convenienceFee }}</span>
+      </p>
+      <hr />
+
+      <!-- Subtotal -->
+      <p class="subtotal">
+        <span class="seat-name">SUB TOTAL</span>
+        <span class="seat-amount">${{ finalPrice }}</span>
+      </p>
+    </div>
+    <button   (click)="proceed()">PROCEED</button>
+  </div>
+</div>

@@ -1,0 +1,36 @@
+<div class="container" *ngIf="movie">
+  <!-- Wrapper for movie image and details -->
+  <div class="content-wrapper">
+      <!-- Movie Image -->
+      <img [src]="movie.image" alt="movie.title" class="movie-image">
+
+      <!-- Movie Details -->
+      <div class="details">
+          <h2>{{movie.title}}</h2>
+          <p>{{movie.genre}}</p>
+
+          <!-- Star Rating -->
+          <div class="star-rating">
+              <ng-container *ngFor="let star of [].constructor(5); let i = index">
+                  <span
+                      [ngClass]="{
+                          'full': movie.rating > i,
+                          'half': movie.rating > i - 0.5 && movie.rating < i + 1,
+                          'empty': movie.rating <= i
+                      }"
+                      class="star"
+                  ></span>
+              </ng-container>
+          </div>
+
+          <!-- Select Seat Button -->
+          <a [routerLink]="['/movie', movie.id, 'seat-selection']" class="select-seat-button">Select Seat</a><br>
+            <!-- Back to Movie List Button -->
+          <span>
+          <a routerLink="/" class="back-button">Back to Movie List</a>
+          </span>
+
+      </div>
+  </div>
+
+</div>
